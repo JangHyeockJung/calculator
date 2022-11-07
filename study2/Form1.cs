@@ -12,19 +12,19 @@ namespace study2
 {
     public partial class Form1 : Form
     {
-        string s = "0";       
-        char c = '+';
-        float temp = 0;
-        float result = 0;
+        string s = "0";       // 텍스트 박스 문자열
+        char c = '+'; // 부호 표시
+        float temp = 0; //계산 전 임시 저장 
+        float result = 0; // 계산 결과
         public Form1()
         {
             InitializeComponent();
-            textBox1.Text = s;
+            textBox1.Text = s; // 입력 영역 0 표시
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0")
+            if (textBox1.Text == "0") // 입력 영역 0인 경우 1 입력 시 
             {
                 s = "1";
             }
@@ -32,7 +32,7 @@ namespace study2
             {
                 s = s + "1";
             }
-            textBox1.Text = s;
+            textBox1.Text = s; // 입력 영역 0이 아닌 경우 1 입력 시
             return;
         }
 
@@ -162,7 +162,7 @@ namespace study2
             return;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) // 'C' 버튼 클릭 시 초기화
         {
             s = "0";
             textBox1.Text = s;
@@ -172,7 +172,7 @@ namespace study2
             return;
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void button13_Click(object sender, EventArgs e) // 백스페이스, 마지막 입력 지우기
         {
             if (s.Length > 1)
             {
@@ -187,7 +187,7 @@ namespace study2
             return;
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void button14_Click(object sender, EventArgs e) // +
         {
             if (temp == 0)
             {
@@ -207,7 +207,7 @@ namespace study2
             
         }
 
-        private void button18_Click(object sender, EventArgs e)
+        private void button18_Click(object sender, EventArgs e) // =
         {
             if (c == '+')
             {
@@ -247,7 +247,7 @@ namespace study2
             }
         }
 
-        private void button15_Click(object sender, EventArgs e)
+        private void button15_Click(object sender, EventArgs e) // -
         {
             if (temp == 0)
             {
@@ -266,7 +266,7 @@ namespace study2
             }
         }
 
-        private void button16_Click(object sender, EventArgs e)
+        private void button16_Click(object sender, EventArgs e) // *
         {
             if (temp == 0)
             {
@@ -285,7 +285,7 @@ namespace study2
             }
         }
 
-        private void button17_Click(object sender, EventArgs e)
+        private void button17_Click(object sender, EventArgs e) // /
         {
             if (temp == 0)
             {
@@ -304,7 +304,7 @@ namespace study2
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // 음수 양수 전환
         {
             temp = float.Parse(textBox1.Text);
             
