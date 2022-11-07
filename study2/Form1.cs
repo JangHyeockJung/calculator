@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//키보드 입력, 텍스트 박스 미사용 - 라벨
+//점 2개 오류 - 팝업 
+//천 단위 구분자 - %3
+
 namespace study2
 {
     public partial class Form1 : Form
