@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//키보드 입력, 텍스트 박스 미사용 - 라벨
-//점 2개 오류 - 팝업 
+//키보드 입력, 텍스트 박스 미사용 - 라벨 O
+//점 2개 오류 - 팝업 O
 //천 단위 구분자 - %3
 
 namespace study2
@@ -18,8 +18,9 @@ namespace study2
     {
         string s = "0";       // 텍스트 박스 문자열
         char c = '+'; // 부호 표시
-        float temp = 0; //계산 전 임시 저장 
+        string temp = "0"; //계산 전 임시 저장 
         float result = 0; // 계산 결과
+        float f = 0; //스트링 숫자 변환
         public Form1()
         {
             InitializeComponent();
@@ -32,12 +33,15 @@ namespace study2
             if (textBox1.Text == "0") // 입력 영역 0인 경우 1 입력 시 
             {
                 s = "1";
+                textBox1.Text = s;
             }
             else
-            {
-                s = s + "1";
+            {   
+                s += "1";
+                f = float.Parse(s);
+                textBox1.Text = f.ToString("#,##0.###"); // 입력 영역 0이 아닌 경우 1 입력 시
             }
-            textBox1.Text = s; // 입력 영역 0이 아닌 경우 1 입력 시
+            
             this.ActiveControl = button18;
         }
         public void btn2() //2
@@ -45,12 +49,14 @@ namespace study2
             if (textBox1.Text == "0")
             {
                 s = "2";
+                textBox1.Text = s;
             }
             else
             {
                 s = s + "2";
+                f = float.Parse(s);
+                textBox1.Text = f.ToString("#,##0.###");
             }
-            textBox1.Text = s;
             this.ActiveControl = button18;
         }
         public void btn3() //3
@@ -58,12 +64,15 @@ namespace study2
             if (textBox1.Text == "0")
             {
                 s = "3";
+                textBox1.Text = s;
             }
             else
             {
                 s = s + "3";
+                f = float.Parse(s);
+                textBox1.Text = f.ToString("#,##0.###");
             }
-            textBox1.Text = s;
+            
             this.ActiveControl = button18;
         }
         public void btn4() //4 
@@ -71,12 +80,15 @@ namespace study2
             if (textBox1.Text == "0")
             {
                 s = "4";
+                textBox1.Text = s;
             }
             else
             {
                 s = s + "4";
+                f = float.Parse(s);
+                textBox1.Text = f.ToString("#,##0.###");
             }
-            textBox1.Text = s;
+            
             this.ActiveControl = button18;
         }
         public void btn5() //5
@@ -84,12 +96,15 @@ namespace study2
             if (textBox1.Text == "0")
             {
                 s = "5";
+                textBox1.Text = s;
             }
             else
             {
                 s = s + "5";
+                f = float.Parse(s);
+                textBox1.Text = f.ToString("#,##0.###");
             }
-            textBox1.Text = s;
+            
             this.ActiveControl = button18;
         }
         public void btn6() //6
@@ -97,12 +112,15 @@ namespace study2
             if (textBox1.Text == "0")
             {
                 s = "6";
+                textBox1.Text = s;
             }
             else
             {
                 s = s + "6";
+                f = float.Parse(s);
+                textBox1.Text = f.ToString("#,##0.###");
             }
-            textBox1.Text = s;
+            
             this.ActiveControl = button18;
         }
         public void btn7() //7
@@ -110,12 +128,15 @@ namespace study2
             if (textBox1.Text == "0")
             {
                 s = "7";
+                textBox1.Text = s;
             }
             else
             {
                 s = s + "7";
+                f = float.Parse(s);
+                textBox1.Text = f.ToString("#,##0.###");
             }
-            textBox1.Text = s;
+            
             this.ActiveControl = button18;
         }
         public void btn8() //8
@@ -123,12 +144,15 @@ namespace study2
             if (textBox1.Text == "0")
             {
                 s = "8";
+                textBox1.Text = s;
             }
             else
             {
                 s = s + "8";
+                f = float.Parse(s);
+                textBox1.Text = f.ToString("#,##0.###");
             }
-            textBox1.Text = s;
+            
             this.ActiveControl = button18;
         }
         public void btn9() //9
@@ -136,12 +160,15 @@ namespace study2
             if (textBox1.Text == "0")
             {
                 s = "9";
+                textBox1.Text = s;
             }
             else
             {
                 s = s + "9";
+                f = float.Parse(s);
+                textBox1.Text = f.ToString("#,##0.###");
             }
-            textBox1.Text = s;
+            
             this.ActiveControl = button18;
         }
         public void btn0() //0
@@ -149,19 +176,22 @@ namespace study2
             if (textBox1.Text == "0")
             {
                 s = "0";
+                textBox1.Text = s;
             }
             else
             {
                 s = s + "0";
+                f = float.Parse(s);
+                textBox1.Text = f.ToString("#,##0.###");
             }
-            textBox1.Text = s;
+            
             this.ActiveControl = button18;
         }
         public void btnESC() //C
         {
             s = "0";
             textBox1.Text = s;
-            temp = 0;
+            temp = "0";
             result = 0;
             label1.Text = "0";
             this.ActiveControl = button18;
@@ -177,82 +207,87 @@ namespace study2
             {
                 s = "0";
             }
-            textBox1.Text = s;
+            f = float.Parse(s);
+            textBox1.Text = f.ToString("#,##0.###");
             this.ActiveControl = button18;
         }
         public void btnAdd() //+
         {
-            if (temp == 0)
+            if (temp == "0")
             {
-                temp = float.Parse(textBox1.Text);
+                f = float.Parse(textBox1.Text);
+                temp = f.ToString("#,##0.###");
                 s = "0";
                 textBox1.Text = s;
                 c = '+';
-                label1.Text = temp.ToString() + "+";
+                label1.Text = temp + "+";
             }
             else
             {
                 s = "0";
                 textBox1.Text = s;
                 c = '+';
-                label1.Text = temp.ToString() + "+";
+                label1.Text = temp + "+";
             }
             this.ActiveControl = button18;
         }
         public void btnSubtract() //-
         {
-            if (temp == 0)
+            if (temp == "0")
             {
-                temp = float.Parse(textBox1.Text);
+                f = float.Parse(textBox1.Text);
+                temp = f.ToString("#,##0.###");
                 s = "0";
                 textBox1.Text = s;
                 c = '-';
-                label1.Text = temp.ToString() + "-";
+                label1.Text = temp + "-";
             }
             else
             {
                 s = "0";
                 textBox1.Text = s;
                 c = '-';
-                label1.Text = temp.ToString() + "-";
+                label1.Text = temp + "-";
             }
             this.ActiveControl = button18;
         }
         public void btnMultiply() //*
         {
-            if (temp == 0)
+            if (temp == "0")
             {
-                temp = float.Parse(textBox1.Text);
+                f = float.Parse(textBox1.Text);
+                temp = f.ToString("#,##0.###");
                 s = "0";
                 textBox1.Text = s;
                 c = '*';
-                label1.Text = temp.ToString() + "*";
+                label1.Text = temp + "*";
             }
             else
             {
                 s = "0";
                 textBox1.Text = s;
                 c = '*';
-                label1.Text = temp.ToString() + "*";
+                label1.Text = temp + "*";
             }
             this.ActiveControl = button18;
         }
         public void btnDivide() // /
         {
-            if (temp == 0)
+            if (temp == "0")
             {
-                temp = float.Parse(textBox1.Text);
+                f = float.Parse(textBox1.Text);
+                temp = f.ToString("#,##0.###");
                 s = "0";
                 textBox1.Text = s;
                 c = '/';
-                label1.Text = temp.ToString() + "/";
+                label1.Text = temp + "/";
             }
             else
             {
                 s = "0";
                 textBox1.Text = s;
                 c = '/';
-                label1.Text = temp.ToString() + "/";
+                label1.Text = temp + "/";
             }
             this.ActiveControl = button18;
         }
@@ -260,70 +295,68 @@ namespace study2
         {
             if (c == '+')
             {
-                result = temp + float.Parse(textBox1.Text);
-                textBox1.Text = "0";// result.ToString();
-                temp = result;
+                result = float.Parse(temp) + float.Parse(textBox1.Text);
+                textBox1.Text = "0";
+                temp = result.ToString("#,##0.###");
                 c = ' ';
-                label1.Text = temp.ToString() + " ";
-                return;
+                label1.Text = temp;
             }
             else if (c == '-')
             {
-                result = temp - float.Parse(textBox1.Text);
-                textBox1.Text = "0";// result.ToString();
-                temp = result;
+                result = float.Parse(temp) - float.Parse(textBox1.Text);
+                textBox1.Text = "0";
+                temp = result.ToString("#,##0.###");
                 c = ' ';
-                label1.Text = temp.ToString() + " ";
-                return;
+                label1.Text = temp;
             }
             else if (c == '*')
             {
-                result = temp * float.Parse(textBox1.Text);
-                textBox1.Text = "0";// result.ToString();
-                temp = result;
+                result = float.Parse(temp) * float.Parse(textBox1.Text);
+                textBox1.Text = "0";
+                temp = result.ToString("#,##0.###");
                 c = ' ';
-                label1.Text = temp.ToString() + " ";
-                return;
+                label1.Text = temp;
             }
             else if (c == '/')
             {
-                result = temp / float.Parse(textBox1.Text);
-                textBox1.Text = "0";//result.ToString();
-                temp = result;
+                result = float.Parse(temp) / float.Parse(textBox1.Text);
+                textBox1.Text = "0";
+                temp = result.ToString("#,##0.###");
                 c = ' ';
-                label1.Text = temp.ToString() + " ";
-                return;
+                label1.Text = temp;
             }
             s = "0";
             this.ActiveControl = button18;
         }
         public void btnChange() // +/-
         {
-            temp = float.Parse(textBox1.Text);
+            f = float.Parse(temp);
 
-            if (temp == 0)
+            if (f == 0)
             {
                 return;
             }
-            else if (temp < 0)
+            else if (f < 0)
             {
                 s = "0";
                 textBox1.Text = s;
-                temp = -temp;
-                label1.Text = temp.ToString();
+                f = -f;
+                temp = f.ToString("#,##0.###");
+                label1.Text = temp;
             }
-            else if (temp > 0)
+            else if (f > 0)
             {
                 s = "0";
                 textBox1.Text = s;
-                temp = -temp;
-                label1.Text = temp.ToString();
+                f = -f;
+                temp = f.ToString("#,##0.###");
+                label1.Text = temp;
             }
             this.ActiveControl = button18;
         }
         public void btnDemical() 
         {
-            if (textBox1.Text.EndsWith("."))
+            if (textBox1.Text.Any(c => c == '.'))
             {
                 MessageBox.Show(". 두 번 오류");
             }
@@ -510,6 +543,6 @@ namespace study2
                     btnEqual();
                     break;
                 }
-        }
+        } // 키보드 입력
     }
 }
