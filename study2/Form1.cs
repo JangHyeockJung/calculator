@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,23 +24,23 @@ namespace study2
         {
             InitializeComponent();
             textBox1.Text = s; // 입력 영역 0 표시
+            this.ActiveControl = button18;
+            
         }
-
-        private void button4_Click(object sender, EventArgs e)
+        public void btn1() 
         {
             if (textBox1.Text == "0") // 입력 영역 0인 경우 1 입력 시 
             {
                 s = "1";
             }
-            else 
+            else
             {
                 s = s + "1";
             }
             textBox1.Text = s; // 입력 영역 0이 아닌 경우 1 입력 시
-            return;
+            this.ActiveControl = button18;
         }
-
-        private void button5_Click(object sender, EventArgs e)
+        public void btn2() //2
         {
             if (textBox1.Text == "0")
             {
@@ -51,10 +51,9 @@ namespace study2
                 s = s + "2";
             }
             textBox1.Text = s;
-            return;
+            this.ActiveControl = button18;
         }
-
-        private void button6_Click(object sender, EventArgs e)
+        public void btn3() //3
         {
             if (textBox1.Text == "0")
             {
@@ -65,10 +64,9 @@ namespace study2
                 s = s + "3";
             }
             textBox1.Text = s;
-            return;
+            this.ActiveControl = button18;
         }
-
-        private void button7_Click(object sender, EventArgs e)
+        public void btn4() //4 
         {
             if (textBox1.Text == "0")
             {
@@ -79,10 +77,9 @@ namespace study2
                 s = s + "4";
             }
             textBox1.Text = s;
-            return;
+            this.ActiveControl = button18;
         }
-
-        private void button8_Click(object sender, EventArgs e)
+        public void btn5() //5
         {
             if (textBox1.Text == "0")
             {
@@ -93,10 +90,9 @@ namespace study2
                 s = s + "5";
             }
             textBox1.Text = s;
-            return;
+            this.ActiveControl = button18;
         }
-
-        private void button9_Click(object sender, EventArgs e)
+        public void btn6() //6
         {
             if (textBox1.Text == "0")
             {
@@ -107,10 +103,9 @@ namespace study2
                 s = s + "6";
             }
             textBox1.Text = s;
-            return;
+            this.ActiveControl = button18;
         }
-
-        private void button10_Click(object sender, EventArgs e)
+        public void btn7() //7
         {
             if (textBox1.Text == "0")
             {
@@ -121,10 +116,9 @@ namespace study2
                 s = s + "7";
             }
             textBox1.Text = s;
-            return;
+            this.ActiveControl = button18;
         }
-
-        private void button11_Click(object sender, EventArgs e)
+        public void btn8() //8
         {
             if (textBox1.Text == "0")
             {
@@ -135,10 +129,9 @@ namespace study2
                 s = s + "8";
             }
             textBox1.Text = s;
-            return;
+            this.ActiveControl = button18;
         }
-
-        private void button12_Click(object sender, EventArgs e)
+        public void btn9() //9
         {
             if (textBox1.Text == "0")
             {
@@ -149,10 +142,9 @@ namespace study2
                 s = s + "9";
             }
             textBox1.Text = s;
-            return;
+            this.ActiveControl = button18;
         }
-
-        private void button19_Click(object sender, EventArgs e)
+        public void btn0() //0
         {
             if (textBox1.Text == "0")
             {
@@ -163,35 +155,32 @@ namespace study2
                 s = s + "0";
             }
             textBox1.Text = s;
-            return;
+            this.ActiveControl = button18;
         }
-
-        private void button3_Click(object sender, EventArgs e) // 'C' 버튼 클릭 시 초기화
+        public void btnESC() //C
         {
             s = "0";
             textBox1.Text = s;
             temp = 0;
             result = 0;
             label1.Text = "0";
-            return;
+            this.ActiveControl = button18;
         }
-
-        private void button13_Click(object sender, EventArgs e) // 백스페이스, 마지막 입력 지우기
+        public void btnBack() //<-
         {
             if (s.Length > 1)
             {
                 s = s.Remove(s.Length - 1);
-                
+
             }
             else
             {
                 s = "0";
             }
             textBox1.Text = s;
-            return;
+            this.ActiveControl = button18;
         }
-
-        private void button14_Click(object sender, EventArgs e) // +
+        public void btnAdd() //+
         {
             if (temp == 0)
             {
@@ -201,22 +190,78 @@ namespace study2
                 c = '+';
                 label1.Text = temp.ToString() + "+";
             }
-            else 
+            else
             {
                 s = "0";
                 textBox1.Text = s;
                 c = '+';
                 label1.Text = temp.ToString() + "+";
             }
-            
+            this.ActiveControl = button18;
         }
-
-        private void button18_Click(object sender, EventArgs e) // =
+        public void btnSubtract() //-
+        {
+            if (temp == 0)
+            {
+                temp = float.Parse(textBox1.Text);
+                s = "0";
+                textBox1.Text = s;
+                c = '-';
+                label1.Text = temp.ToString() + "-";
+            }
+            else
+            {
+                s = "0";
+                textBox1.Text = s;
+                c = '-';
+                label1.Text = temp.ToString() + "-";
+            }
+            this.ActiveControl = button18;
+        }
+        public void btnMultiply() //*
+        {
+            if (temp == 0)
+            {
+                temp = float.Parse(textBox1.Text);
+                s = "0";
+                textBox1.Text = s;
+                c = '*';
+                label1.Text = temp.ToString() + "*";
+            }
+            else
+            {
+                s = "0";
+                textBox1.Text = s;
+                c = '*';
+                label1.Text = temp.ToString() + "*";
+            }
+            this.ActiveControl = button18;
+        }
+        public void btnDivide() // /
+        {
+            if (temp == 0)
+            {
+                temp = float.Parse(textBox1.Text);
+                s = "0";
+                textBox1.Text = s;
+                c = '/';
+                label1.Text = temp.ToString() + "/";
+            }
+            else
+            {
+                s = "0";
+                textBox1.Text = s;
+                c = '/';
+                label1.Text = temp.ToString() + "/";
+            }
+            this.ActiveControl = button18;
+        }
+        public void btnEqual() //=
         {
             if (c == '+')
             {
                 result = temp + float.Parse(textBox1.Text);
-                textBox1.Text = result.ToString();
+                textBox1.Text = "0";// result.ToString();
                 temp = result;
                 c = ' ';
                 label1.Text = temp.ToString() + " ";
@@ -225,7 +270,7 @@ namespace study2
             else if (c == '-')
             {
                 result = temp - float.Parse(textBox1.Text);
-                textBox1.Text = result.ToString();
+                textBox1.Text = "0";// result.ToString();
                 temp = result;
                 c = ' ';
                 label1.Text = temp.ToString() + " ";
@@ -234,7 +279,7 @@ namespace study2
             else if (c == '*')
             {
                 result = temp * float.Parse(textBox1.Text);
-                textBox1.Text = result.ToString();
+                textBox1.Text = "0";// result.ToString();
                 temp = result;
                 c = ' ';
                 label1.Text = temp.ToString() + " ";
@@ -243,75 +288,19 @@ namespace study2
             else if (c == '/')
             {
                 result = temp / float.Parse(textBox1.Text);
-                textBox1.Text = result.ToString();
+                textBox1.Text = "0";//result.ToString();
                 temp = result;
                 c = ' ';
                 label1.Text = temp.ToString() + " ";
                 return;
             }
+            s = "0";
+            this.ActiveControl = button18;
         }
-
-        private void button15_Click(object sender, EventArgs e) // -
-        {
-            if (temp == 0)
-            {
-                temp = float.Parse(textBox1.Text);
-                s = "0";
-                textBox1.Text = s;
-                c = '-';
-                label1.Text = temp.ToString() + "-";
-            }
-            else
-            {
-                s = "0";
-                textBox1.Text = s;
-                c = '-';
-                label1.Text = temp.ToString() + "-";
-            }
-        }
-
-        private void button16_Click(object sender, EventArgs e) // *
-        {
-            if (temp == 0)
-            {
-                temp = float.Parse(textBox1.Text);
-                s = "0";
-                textBox1.Text = s;
-                c = '*';
-                label1.Text = temp.ToString() + "*";
-            }
-            else
-            {
-                s = "0";
-                textBox1.Text = s;
-                c = '*';
-                label1.Text = temp.ToString() + "*";
-            }
-        }
-
-        private void button17_Click(object sender, EventArgs e) // /
-        {
-            if (temp == 0)
-            {
-                temp = float.Parse(textBox1.Text);
-                s = "0";
-                textBox1.Text = s;
-                c = '/';
-                label1.Text = temp.ToString() + "/";
-            }
-            else
-            {
-                s = "0";
-                textBox1.Text = s;
-                c = '/';
-                label1.Text = temp.ToString() + "/";
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e) // 음수 양수 전환
+        public void btnChange() // +/-
         {
             temp = float.Parse(textBox1.Text);
-            
+
             if (temp == 0)
             {
                 return;
@@ -323,13 +312,204 @@ namespace study2
                 temp = -temp;
                 label1.Text = temp.ToString();
             }
-            else if (temp > 0) 
+            else if (temp > 0)
             {
                 s = "0";
                 textBox1.Text = s;
                 temp = -temp;
                 label1.Text = temp.ToString();
             }
+            this.ActiveControl = button18;
+        }
+        public void btnDemical() 
+        {
+            if (textBox1.Text.EndsWith("."))
+            {
+                MessageBox.Show(". 두 번 오류");
+            }
+            else
+            {
+                s = s + ".";
+                textBox1.Text = s;
+            }
+            this.ActiveControl = button18;
+        }
+        private void button4_Click(object sender, EventArgs e) //1
+        {
+            btn1();
+        }
+
+        private void button5_Click(object sender, EventArgs e)//2
+        {
+            btn2();
+        }
+
+        private void button6_Click(object sender, EventArgs e)//3
+        {
+            btn3();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            btn4();
+        }//4
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            btn5();
+        }//5
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            btn6();
+        }//6
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            btn7();
+        }//7
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            btn8();
+        }//8
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            btn9();
+        }//9
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            btn0();
+        }//0
+
+        private void button3_Click(object sender, EventArgs e) // 'C' 버튼 클릭 시 초기화
+        {
+            btnESC();
+        }
+
+        private void button13_Click(object sender, EventArgs e) // 백스페이스, 마지막 입력 지우기
+        {
+            btnBack();
+        }
+
+        private void button14_Click(object sender, EventArgs e) // +
+        {
+            btnAdd();
+        }
+
+        private void button18_Click(object sender, EventArgs e) // =
+        {
+            btnEqual();
+        }
+
+        private void button15_Click(object sender, EventArgs e) // -
+        {
+            btnSubtract();
+        }
+
+        private void button16_Click(object sender, EventArgs e) // *
+        {
+            btnMultiply();
+        }
+
+        private void button17_Click(object sender, EventArgs e) // /
+        {
+            btnDivide();   
+        }
+
+        private void button1_Click(object sender, EventArgs e) // 음수 양수 전환
+        {
+            btnChange();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.D1:
+                    btn1();
+                    break;
+                case Keys.NumPad1:
+                    btn1();
+                    break;
+                case Keys.D2:
+                    btn2();
+                    break;
+                case Keys.NumPad2:
+                    btn2();
+                    break;
+                case Keys.D3:
+                    btn3();
+                    break;
+                case Keys.NumPad3:
+                    btn3();
+                    break;
+                case Keys.D4:
+                    btn4();
+                    break;
+                case Keys.NumPad4:
+                    btn4();
+                    break;
+                case Keys.D5:
+                    btn5();
+                    break;
+                case Keys.NumPad5:
+                    btn5();
+                    break;
+                case Keys.D6:
+                    btn6();
+                    break;
+                case Keys.NumPad6:
+                    btn6();
+                    break;
+                case Keys.D7:
+                    btn7();
+                    break;
+                case Keys.NumPad7:
+                    btn7();
+                    break;
+                case Keys.D8:
+                    btn8();
+                    break;
+                case Keys.NumPad8:
+                    btn8();
+                    break;
+                case Keys.D9:
+                    btn9();
+                    break;
+                case Keys.NumPad9:
+                    btn9();
+                    break;
+                case Keys.D0:
+                    btn0();
+                    break;
+                case Keys.NumPad0:
+                    btn0();
+                    break;
+                case Keys.Add:
+                    btnAdd();
+                    break;
+                case Keys.Subtract:
+                    btnSubtract();
+                    break;
+                case Keys.Multiply:
+                    btnMultiply();
+                    break;
+                case Keys.Divide:
+                    btnDivide();
+                    break;
+                case Keys.OemPeriod:
+                    btnDemical();
+                    break;
+                case Keys.Decimal:
+                    btnDemical();
+                    break;
+                case Keys.Enter:
+                    btnEqual();
+                    break;
+                }
         }
     }
 }
